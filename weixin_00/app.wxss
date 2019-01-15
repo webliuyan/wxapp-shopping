@@ -1,0 +1,16 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+/*单行超出指定范围截取内容并添加点点点*/
+.ell{
+  overflow:hidden;/*超出部分隐藏*/
+  white-space:nowrap;/*不允许换行*/
+  text-overflow: ellipsis;/*超出比分添加点点点*/
+}

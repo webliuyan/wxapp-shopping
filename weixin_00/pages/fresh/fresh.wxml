@@ -1,0 +1,9 @@
+<!--pages/fresh/fresh.wxml-->
+<view class="shop" wx:for="{{list}}" wx:key="index">
+  <image src="{{item.img_url}}" class="shop-img"></image>
+  <view class="shop-info">
+    <text class="shop-title ell">{{item.name}}</text>
+    <text class="shop-add" >{{item.title}}</text>
+    <text class="shop-time" >{{item.price}}</text>
+  </view>
+</view>

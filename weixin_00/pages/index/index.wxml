@@ -1,0 +1,64 @@
+<!--index.wxml-->
+<view class="app-container">
+  <!--搜索框-->
+  <view class="search">
+    <view class="scan" wx:for="{{sclist1}}" wx:key="index">
+      <image class="widgets-img" src="{{item.img_url}}" lazy-load mode="aspectFit" />
+    </view>
+    <view class="search-input"  wx:for="{{sclist2}}" wx:key="index">
+      <image class="search-icon" src="{{item.img_url}}" lazy-load mode="aspectFit" />
+      <input class="serach-text" placeholder="搜索商品" />
+    </view>
+    <view class="scan" wx:for="{{sclist3}}" wx:key="index">
+      <image class="widgets-img" src="{{item.img_url}}" lazy-load mode="aspectFit" />
+    </view>
+  </view>
+  <!--轮播图-->
+  <view class="slider">
+    <swiper autoplay>
+      <swiper-item wx:for="{{list}}" wx:key="index" >
+        <image src="{{item.img_url}}" lazy-load mode="aspectFill" >  </image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!--九宫格-->
+  <view class="index-nav">
+    <view class="nav-item" wx:for="{{navlist}}" wx:key="index" >
+      <image src="{{item.img_url}}" lazy-load mode='aspectFill'  bindtap="handleJump" data-id="{{item.id}}"></image>
+      <text>{{item.title}}</text>
+    </view>
+  </view>
+  <!--分割块-->
+  <view class="divider"></view>
+  <!-- 其他 -->
+  <view class="page-margin page-column"   >
+    <view class="page-row" style="width:100%;justify-content:space-between" wx:for="{{topllist}}" wx:key="index">
+      <image style="width:180rpx;height:40rpx;margin-left:0px" src="{{item.img_url}}" mode="aspectFill" />
+      <view style="height:40rpx;" wx:for="{{toprlist}}" wx:key="index">
+        <text style="margin-right:20rpx; font-size:25rpx;">更多秒杀</text>
+        <image style="width: 22rpx; height:22rpx;margin-top:0px;" src="{{item.img_url}}"   lazy-load mode="aspectFill" bindtap="handleMore"/>
+      </view>
+    </view>
+    <scroll-view scroll-x="true" style="width:100%; margin-top:10rpx;white-space: nowrap;">
+      <block wx:for="{{quicks}}" wx:key="index">
+        <view style="display: inline-block;">
+          <view class="page-column" style="padding:20rpx;">
+            <image style="width:170rpx;height:170rpx;" src="{{item.img_url}}"  lazy-load mode="aspectFill"/>
+            <text style="font-size:32rpx;color:#FF0000; margin-top:10rpx;">{{item.price}}</text>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+    <view class="draw__line"></view>
+    <view class="page-row">
+      <view  style="justify-content:center" wx:for="{{ butlist1}}" wx:key="index">
+        <image style="width:240rpx;height:292rpx;" src="{{item.img_url}}" lazy-load mode="aspectFill"/>
+      </view>
+    </view>
+    <view class="page-row">
+      <view style="justify-content:center" wx:for="{{butlist2}}" wx:key="index">
+        <image style="width:360rpx;height:202rpx;" src="{{item.img_url}}" lazy-load mode="aspectFill"/>
+      </view>
+    </view>
+  </view>
+</view>
